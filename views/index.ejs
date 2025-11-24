@@ -1,6 +1,93 @@
-<%- include('layout', { 
-    body: `
-        <h1>Bienvenue chez Kamite Group</h1>
-        <p>Ensemble, organisons votre quotidien.</p>
-    `
-}) %>
+<section class="hero-section">
+  <h1>Bienvenue chez Kamite Group</h1>
+  <p>Ensemble, organisons votre quotidien.</p>
+
+  <div class="hero-buttons">
+    <a href="/services" class="btn-primary">Découvrir nos services</a>
+    <a href="/contact" class="btn-secondary">Nous contacter</a>
+  </div>
+</section>
+
+<section class="services-preview">
+  <h2>Nos services</h2>
+
+  <div class="services-grid">
+    <!-- Chaque .service-card a un data-title et data-desc utilisés par la modale -->
+    <div class="service-card" data-title="KAMITE Transport & Logistique"
+         data-desc="Solutions de transport, gestion de chaînes logistiques et services adaptés aux besoins de votre entreprise.">
+      <h3>KAMITE Transport & Logistique</h3>
+      <p>Solutions de transport et gestion de chaînes logistiques adaptées.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+
+    <div class="service-card" data-title="KAMITE Prod & Événementiel"
+         data-desc="Organisation complète d’événements, production multimédia, coordination et gestion opérationnelle.">
+      <h3>KAMITE Prod & Événementiel</h3>
+      <p>Organisation complète d’événements et production multimédia.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+
+    <div class="service-card" data-title="KAMITE Création & Impression"
+         data-desc="Conception graphique, impression grand format, signalétique et charte graphique pour vos supports.">
+      <h3>KAMITE Création & Impression</h3>
+      <p>Conception graphique et impression professionnelle.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+
+    <div class="service-card" data-title="KAMITE Formation & Sous-traitance"
+         data-desc="Programmes de formation adaptés aux entreprises et prestations de sous-traitance opérationnelle.">
+      <h3>KAMITE Formation & Sous-traitance</h3>
+      <p>Formations professionnelles et services de sous-traitance.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+
+    <div class="service-card" data-title="KAMITE Industrie"
+         data-desc="Solutions industrielles, production, maintenance et logistique industrielle.">
+      <h3>KAMITE Industrie</h3>
+      <p>Solutions industrielles et production.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+
+    <div class="service-card" data-title="Afroclean by KAMITE GROUP"
+         data-desc="Services de nettoyage professionnel et maintenance d'espaces.">
+      <h3>Afroclean by KAMITE GROUP</h3>
+      <p>Nettoyage professionnel et maintenance.</p>
+      <button class="detail-btn">Voir</button>
+    </div>
+  </div>
+</section>
+
+<!-- Filiales (séparées des départements principaux) -->
+<section class="filiales-section">
+  <h2>Nos filiales</h2>
+
+  <div class="filiales-grid">
+    <div class="filiale-card">
+      <h4>Gold Beauty</h4>
+      <p>Cosmétiques et soins beauté — filiale du groupe.</p>
+      <button class="detail-btn" data-title="Gold Beauty" data-desc="Gold Beauty — cosmétiques et soins professionnels.">Voir</button>
+    </div>
+
+    <div class="filiale-card">
+      <h4>Amabutho (Sécurité)</h4>
+      <p>Services de sécurité professionnelle et gardiennage.</p>
+      <button class="detail-btn" data-title="Amabutho (Sécurité)" data-desc="Amabutho — services de sécurité, gardiennage et protection.">Voir</button>
+    </div>
+
+    <div class="filiale-card">
+      <h4>Établissements Express</h4>
+      <p>Services express et logistique de proximité.</p>
+      <button class="detail-btn" data-title="Établissements Express" data-desc="Établissements Express — services rapides et logistique locale.">Voir</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modale réutilisable -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content" role="dialog" aria-modal="true">
+    <button id="modal-close" class="modal-close">✕</button>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+  </div>
+</div>

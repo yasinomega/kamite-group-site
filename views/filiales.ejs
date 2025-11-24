@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Filiales</h1>
+  <% filiales.forEach(function(f){ %>
+    <article class="filiale-item">
+      <h3><%= f.name %></h3>
+      <p><%= f.desc %></p>
+      <!-- ici on pourra afficher logo + page dédiée plus tard -->
+    </article>
+  <% }) %>
+</div>

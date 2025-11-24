@@ -1,5 +1,155 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* ===== HERO SECTION ===== */
+
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #0d4ea2, #3f7bdc, #e6f0ff);
+    color: #0c2a5c;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #0c2a5c;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #0d4ea2;
+    color: #fff;
+}
+
+.btn-secondary {
+    border: 2px solid #0d4ea2;
+    color: #0d4ea2;
+}
+
+/* ===== SERVICES BELOW ===== */
+
+.services-preview {
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.services-preview h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.service-card {
+    width: 30%;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+}
+/* === Services: grille responsive === */
+.services-preview {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.services-preview h2 { font-size: 24px; margin-bottom: 30px; color: #1b2d4a; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  background: transparent;
+  padding: 18px 10px;
+  border-radius: 6px;
+}
+
+.service-card h3 { font-size: 18px; margin-bottom: 8px; color: #123462; }
+.service-card p { color: #5b6772; margin-bottom: 12px; }
+
+.detail-btn {
+  background: #0d4ea2;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Filiales (séparées et traitées à part) */
+.filiales-section {
+  background: #f7fbff;
+  padding: 40px 20px;
+  margin-top: 20px;
+}
+
+.filiales-section h2 { text-align: left; max-width: 1100px; margin: 0 auto 18px; }
+
+.filiales-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.filiale-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  width: 32%;
+  box-shadow: 0 2px 6px rgba(10,30,60,0.06);
+}
+
+.filiale-card h4 { margin-bottom: 6px; color: #0d3b73; }
+.filiale-card p { color: #556 ; margin-bottom: 10px; }
+
+/* === Modal simple === */
+.modal { display: none; position: fixed; inset: 0; z-index: 9999; align-items:center; justify-content:center; }
+.modal[aria-hidden="false"] { display: flex; }
+.modal-backdrop { position:absolute; inset:0; background: rgba(0,0,0,0.5); }
+.modal-content {
+  position: relative;
+  background: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 22px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+}
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
 }

@@ -1,3 +1,19 @@
-<footer class="footer">
-  <p>© 2025 Kamite Group. Tous droits réservés.</p>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-left">
+      <p>© <%= new Date().getFullYear() %> Kamite Group. Tous droits réservés.</p>
+      <p class="slogan"><%= typeof slogan !== 'undefined' ? slogan : '' %></p>
+    </div>
+
+    <div class="footer-links">
+      <a href="/privacy">Politique de confidentialité</a>
+      <a href="/partners">Partenaires</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="<%= social.instagram %>" target="_blank" rel="noopener">Instagram</a>
+      <a href="<%= social.facebook %>" target="_blank" rel="noopener">Facebook</a>
+      <a href="<%= social.linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
 </footer>

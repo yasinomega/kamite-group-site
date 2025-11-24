@@ -1,13 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="fr">
+  <head>
     <%- include('partials/head') %>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('partials/header') %>
+
     <main>
-        <%- body %>
+      <%- body %>  <!-- express-ejs-layouts injecte la page ici -->
     </main>
+
     <%- include('partials/footer') %>
-</body>
+
+    <script src="/js/main.js"></script>
+    <script>
+  // Modale : clique sur un bouton "Voir" pour afficher titre + description
+  (function(){
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc  = document.getElementById('modal-desc');
+    const closeBtn   = document.getElementById('modal-close');
+
+    function openModal(title, desc){
+      modalTitle.textContent = title;
+      modalDesc.textContent  = desc;
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    // bouton close
+    closeBtn.addEventListener('click', closeModal);
+    // fermer si click en dehors de contenu
+    modal.addEventListener('click', (e)=> {
+      if(e.target.classList.contains('modal-backdrop')) closeModal();
+    });
+
+    // lier tous les boutons .detail-btn qui sont maintenant présents
+    document.addEventListener('click', function(e){
+      if(e.target.matches('.detail-btn')){
+        const card = e.target.closest('.service-card, .filiale-card');
+        if(!card) return;
+        const title = card.getAttribute('data-title') || card.querySelector('h3, h4').textContent.trim();
+        const desc  = card.getAttribute('data-desc')  || card.querySelector('p').textContent.trim();
+        openModal(title, desc);
+      }
+    });
+  })();
+</script>
+
+  </body>
 </html>

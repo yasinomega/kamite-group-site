@@ -1,6 +1,12 @@
-<%- include('layout', {
-    body: `
-        <h1>Contactez-nous</h1>
-        <p>Nous sommes à votre écoute.</p>
-    `
-}) %>
+<section class="container">
+  <h1>Contact</h1>
+  <p>Email : Hotep.FrontOffice@kamitegroup.ccd</p>
+  <p>WhatsApp : +243 82 80 81 005</p>
+
+  <form action="/api/contact" method="post" class="contact-form">
+    <input name="name" placeholder="Nom" required>
+    <input name="email" placeholder="Email" type="email" required>
+    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+    <button type="submit" class="btn">Envoyer</button>
+  </form>
+</section>
