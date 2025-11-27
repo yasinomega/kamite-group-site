@@ -1,149 +1,76 @@
 <%- include('partials/head') %>
+<%- include('partials/header') %>
 
 <section class="hero">
     <h1>Nos Départements & Filiales</h1>
     <p>Découvrez l’ensemble des activités stratégiques de Kamite Group.</p>
 </section>
 
+<!-- ===================== DÉPARTEMENTS ===================== -->
 <section class="services-section">
     <h2>Départements</h2>
 
     <div class="services-grid">
+        <% departments.forEach(function(dep){ %>
+            <div class="service-card"
+                 data-title="<%= dep.title %>"
+                 data-desc="<%= dep.summary %>">
+                
+                <h3><%= dep.title %></h3>
+                <p><%= dep.summary %></p>
 
-        <!-- Transport & Logistique -->
-        <div class="service-card" 
-            data-title="Transport & Logistique"
-            data-desc="Solutions de transport, gestion de chaînes logistiques adaptées et services modulaires pour entreprises. Kamite Group garantit une coordination efficace, une planification rigoureuse et des solutions flexibles pour répondre aux besoins variés en mobilité et distribution. Notre expertise englobe transport terrestre, logistique de distribution, gestion de flux et appui opérationnel aux entreprises nationales et internationales.">
-            
-            <h3>Transport & Logistique</h3>
-            <p>Transport, gestion logistique & coordination.</p>
-        </div>
-
-        <!-- Production & Événementiel -->
-        <div class="service-card" 
-            data-title="Production & Événementiel"
-            data-desc="Organisation complète d’événements, production multimédia, direction technique et coordination opérationnelle. Kamite Prod accompagne entreprises, organisations et institutions dans la mise en œuvre d’événements professionnels, médiatiques et socioculturels. Notre équipe intègre expertise créative, gestion technique et production sur mesure.">
-            
-            <h3>Production & Événementiel</h3>
-            <p>Événementiel, production & coordination.</p>
-        </div>
-
-        <!-- Création & Impression -->
-        <div class="service-card" 
-            data-title="Création & Impression"
-            data-desc="Service spécialisé dans la conception graphique, impression numérique, production de supports visuels et identité de marque. De la création de logos aux impressions professionnelles, Kamite Group fournit des solutions rapides, modernes et adaptées aux entreprises. Qualité premium et finitions soignées garantissent l’impact visuel de vos projets.">
-            
-            <h3>Création & Impression</h3>
-            <p>Design graphique & impressions professionnelles.</p>
-        </div>
-
-        <!-- Formation & Sous-traitance -->
-        <div class="service-card" 
-            data-title="Formation & Sous-traitance"
-            data-desc="Programmes de formation adaptés aux besoins des entreprises : communication, gestion, digital, leadership, opérationnel. Notre département assure aussi des services de sous-traitance spécialisés pour renforcer les capacités internes des entreprises et soutenir leur croissance.">
-            
-            <h3>Formation & Sous-traitance</h3>
-            <p>Renforcement des capacités & support externe.</p>
-        </div>
-
-        <!-- Kamite Industrie -->
-        <div class="service-card" 
-            data-title="Kamite Industrie"
-            data-desc="Projets industriels, transformation locale, production semi-industrielle et développement de produits made-in-Africa. Kamite Group s’engage à bâtir une industrie locale forte, innovante et compétitive, capable de créer de la valeur et des emplois.">
-            
-            <h3>Kamite Industrie</h3>
-            <p>Industrie locale & transformation.</p>
-        </div>
-
+                <% if(dep.cta){ %>
+                <a href="<%= dep.cta.href %>" class="btn-link"><%= dep.cta.label %></a>
+                <% } %>
+            </div>
+        <% }) %>
     </div>
 </section>
 
-<!-- FILIALES -->
+<!-- ===================== FILIALES ===================== -->
 <section class="services-section">
     <h2>Filiales</h2>
 
     <div class="services-grid">
+        <% filiales.forEach(function(f){ %>
+            <div class="service-card"
+                 data-title="<%= f.name %>"
+                 data-desc="<%= f.desc %>">
+                
+                <h3><%= f.name %></h3>
+                <p><%= f.desc %></p>
 
-        <!-- Gold Beauty -->
-        <div class="service-card" 
-            data-title="Gold Beauty"
-            data-desc="Gold Beauty est une filiale spécialisée dans les soins esthétiques, la promotion du bien-être et des produits de beauté. La marque propose des solutions de qualité, adaptées aux besoins locaux, tout en valorisant l’élégance et la confiance en soi.">
-            
-            <h3>Gold Beauty</h3>
-            <p>Beauté & bien-être.</p>
-        </div>
-
-        <!-- Amabutho Sécurité -->
-        <div class="service-card" 
-            data-title="Amabutho Sécurité"
-            data-desc="Amabutho est une agence professionnelle de sécurité privée spécialisée dans la protection des biens et des personnes, le gardiennage, la surveillance et les opérations de terrain. Nos équipes sont formées, disciplinées et orientées vers la prévention et la protection.">
-            
-            <h3>Amabutho Sécurité</h3>
-            <p>Sécurité privée & surveillance.</p>
-        </div>
-
-        <!-- AfroClean -->
-        <div class="service-card" 
-            data-title="AfroClean"
-            data-desc="Service professionnel de nettoyage, entretien, hygiène et assainissement pour entreprises, institutions et particuliers. AfroClean garantit des prestations rapides, soignées et adaptées aux normes modernes d’hygiène.">
-            
-            <h3>AfroClean</h3>
-            <p>Nettoyage & hygiène professionnelle.</p>
-        </div>
-
-        <!-- Établissements Express -->
-        <div class="service-card" 
-            data-title="Établissements Express"
-            data-desc="Filiale spécialisée dans la distribution, le commerce général, l’approvisionnement et les services d’achat express. Une solution rapide et fiable pour entreprises et particuliers.">
-            
-            <h3>Établissements Express</h3>
-            <p>Distribution & commerce général.</p>
-        </div>
-
+                <a href="/filiales/<%= f.id %>" class="btn-link">Voir détail</a>
+            </div>
+        <% }) %>
     </div>
 </section>
 
-<!-- SECTIONS INSTITUTIONNELLES -->
+<!-- ===================== INSTITUTION ===================== -->
 <section class="services-section">
     <h2>Institutionnel</h2>
 
     <div class="services-grid">
 
-        <!-- Historique -->
-        <div class="service-card" 
-            data-title="Historique"
-            data-desc="Kamite Group a été fondé pour réunir plusieurs expertises stratégiques au sein d’une même structure afin de répondre aux besoins croissants du marché congolais et africain. Le groupe a commencé dans le transport, l’événementiel et l’impression, puis a étendu ses activités à la logistique, la formation, la sécurité, le digital et le nettoyage. Aujourd’hui, Kamite Group est une référence en solutions multiservices.">
-            
+        <a href="/institution/historique" class="service-card">
             <h3>Historique</h3>
-            <p>Origines & évolution.</p>
-        </div>
+            <p>Origines & évolution de Kamite Group.</p>
+        </a>
 
-        <!-- Mot du fondateur -->
-        <div class="service-card" 
-            data-title="Mot du Fondateur"
-            data-desc="Kamite Group est né d’une conviction profonde : l’Afrique possède les ressources nécessaires pour bâtir sa propre prospérité. Notre vision place l’excellence, l’intégrité et l’efficacité au cœur de toutes nos actions. Chaque département, chaque filiale, chaque projet reflète notre engagement pour une Afrique forte, prospère et autonome.">
-            
+        <a href="/institution/mot-du-fondateur" class="service-card">
             <h3>Mot du Fondateur</h3>
-            <p>Vision & philosophie.</p>
-        </div>
+            <p>Vision, valeurs & inspirations.</p>
+        </a>
 
-        <!-- Atouts -->
-        <div class="service-card" 
-            data-title="Nos Atouts"
-            data-desc="Nos atouts : maîtrise opérationnelle, diversité de nos services, innovation constante et engagement social. Kamite Group propose des solutions complètes, modernes et adaptées à chaque client, avec un haut niveau de qualité et de performance.">
-            
+        <a href="/institution/nos-atouts" class="service-card">
             <h3>Nos Atouts</h3>
-            <p>Forces & avantages.</p>
-        </div>
+            <p>Compétences, forces & avantages.</p>
+        </a>
 
-        <!-- Perspectives -->
-        <div class="service-card" 
-            data-title="Perspectives & Développement"
-            data-desc="Nos perspectives incluent l’expansion nationale et internationale, la digitalisation complète de nos services, la création de nouvelles filiales, l’investissement industriel et l’amélioration continue de la qualité. Kamite Group se projette comme un acteur majeur du développement économique africain.">
-            
+        <a href="/institution/perspectives" class="service-card">
             <h3>Perspectives</h3>
-            <p>Ambitions & futur.</p>
-        </div>
+            <p>Avenir & développement stratégique.</p>
+        </a>
 
     </div>
 </section>

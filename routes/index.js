@@ -3,13 +3,20 @@ const express = require('express');
 const router = express.Router();
 const pageController = require('../controllers/pageController');
 
-// pages
+// ---------- Pages générales ----------
 router.get('/', pageController.index);
 router.get('/about', pageController.about);
 router.get('/services', pageController.services);
 router.get('/filiales', pageController.filiales);
+router.get('/contact', pageController.contact);  // <<< AJOUT OBLIGATOIRE
 
-// (création de routes séparées par service possible)
-// exemple : router.get('/services/transport', pageController.transport);
+// ---------- Institution ----------
+router.get('/institution/mot-du-fondateur', pageController.motDuFondateur);
+router.get('/institution/historique', pageController.historique);
+router.get('/institution/nos-atouts', pageController.nosAtouts);
+router.get('/institution/perspectives', pageController.perspectives);
+
+// ---------- (Option) routes séparées par service ----------
+// Exemple : router.get('/services/transport', pageController.transport);
 
 module.exports = router;

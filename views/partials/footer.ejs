@@ -1,5 +1,6 @@
 <footer class="site-footer">
   <div class="container footer-grid">
+    
     <div class="footer-left">
       <p>© <%= new Date().getFullYear() %> Kamite Group. Tous droits réservés.</p>
       <p class="slogan"><%= typeof slogan !== 'undefined' ? slogan : '' %></p>
@@ -11,9 +12,19 @@
     </div>
 
     <div class="footer-socials">
-      <a href="<%= social.instagram %>" target="_blank" rel="noopener">Instagram</a>
-      <a href="<%= social.facebook %>" target="_blank" rel="noopener">Facebook</a>
-      <a href="<%= social.linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+
+      <% if (typeof social !== 'undefined') { %>
+          <a href="<%= social.instagram %>" target="_blank" rel="noopener">Instagram</a>
+          <a href="<%= social.facebook %>" target="_blank" rel="noopener">Facebook</a>
+          <a href="<%= social.linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+      <% } else { %>
+          <!-- Si social n'est pas défini, aucun lien pour éviter l'erreur -->
+          <a href="#" class="disabled">Instagram</a>
+          <a href="#" class="disabled">Facebook</a>
+          <a href="#" class="disabled">LinkedIn</a>
+      <% } %>
+
     </div>
+
   </div>
 </footer>
