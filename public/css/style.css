@@ -152,4 +152,9 @@
   background: transparent;
   font-size: 18px;
   cursor: pointer;
+  }
+  .logo-header {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
 }
